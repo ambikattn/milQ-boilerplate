@@ -13,7 +13,7 @@ module.exports = {
         path: path.resolve(__dirname, 'public')
     },
     context: path.resolve(__dirname, 'src'),
-    devServer: {
+    devServer: {    
         contentBase: path.resolve(__dirname, 'public/assets'),
         stats: 'errors-only',
         open: true,
@@ -41,7 +41,7 @@ module.exports = {
         }, {
             test: /\.scss$/,
             use: extractPlugin.extract({
-             use: ["css-loader", "sass-loader", "postcss-loader"],
+             use: ["css-loader", "sass-loader", "postcss-loader", "resolve-url-loader"],
              fallback: 'style-loader'
             })
         }, {
